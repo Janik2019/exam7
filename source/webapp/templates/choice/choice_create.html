@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}СОЗДАТЬ ВАРИАНТ ОТВЕТА{% endblock %}
+
+{% block content %}
+    <h1>СОЗДАТЬ ВАРИАНТ ОТВЕТА</h1>
+    <form method="POST" action="">
+        {% include 'partial/form.html' with button_text="СОЗДАТЬ" %}
+    </form>
+{% endblock %}

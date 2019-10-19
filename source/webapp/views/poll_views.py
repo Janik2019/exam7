@@ -1,4 +1,4 @@
-from webapp.models import Poll
+from webapp.models import Poll, Choice
 from webapp.forms import PollForm
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -45,3 +45,5 @@ class PollDeleteView(DeleteView):
     success_url = reverse_lazy('index')
     model = Poll
     context_object_name = 'poll'
+
+

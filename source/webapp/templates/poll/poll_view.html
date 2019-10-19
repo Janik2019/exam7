@@ -18,4 +18,19 @@
 {#    <p class="text-center">Статус задачи: <b>{{ task.status }}</b></p>#}
 {#    <p class="text-center">Тип задачи: <b>{{ task.type }}</b></p>#}
 
+{% for choice in poll.choice.all %}
+    <div class="card mb-5">
+            <div class="card-body">
+                <h2 class="card-title">{{ choice.text }}</h2>
+                <a href="{% url 'choice_update' choice.pk %}" class="btn btn-dark">РЕДАКТИРОВАТЬ ОТВЕТ</a>
+                <a href="{% url "choice_delete" choice.pk %}" class="btn btn-dark">УДАЛИТЬ ОТВЕТ</a>
+            </div>
+        </div>
+{% endfor %}
+    <a href="{% url 'choice_add' poll.pk %}" class="btn btn-dark mb-5">ДОБАВИТЬ ОТВЕТ</a>
+
+{#    <form action="{% url 'choice_add' poll.pk %}" method="POST" id="add_choice">#}
+{#        {% include 'partial/form.html' with button_text='ДОБАВИТЬ' %}#}
+{#    </form>#}
+
 {% endblock %}
