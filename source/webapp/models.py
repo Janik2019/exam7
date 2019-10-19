@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Poll(models.Model):
-    question = models.CharField(max_length=300, null=False, blank=False, verbose_name='Вопрос')
+    question = models.CharField(max_length=300, null=False, blank=False, verbose_name='Название Опроса')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания опроса')
 
     def __str__(self):
