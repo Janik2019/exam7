@@ -25,3 +25,12 @@ class Choice(models.Model):
     class Meta:
         verbose_name = 'Вариант ответа'
         verbose_name_plural = 'Варианты ответа'
+
+
+
+class Answer(models.Model):
+    poll = models.ForeignKey('webapp.Poll', related_name='answers', null=True, blank=False,
+                             on_delete=models.CASCADE, verbose_name='Ответы')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания ответа')
+    choice = models.ForeignKey('webapp.Choice', related_name='answers', null=True, blank=False,
+                             on_delete=models.CASCADE, verbose_name='Ответы')
