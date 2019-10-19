@@ -24,14 +24,6 @@ class ChoiceUpdateView(UpdateView):
     def get_success_url(self):
         return reverse('poll_view', kwargs={'pk': self.object.poll.pk})
 
-# class ChoiceDeleteView(DeleteView):
-#     template_name = 'choice/choice_delete.html'
-#     model = Choice
-#     def get(self, request, *args, **kwargs):
-#         return self.delete(request, *args, **kwargs)
-#
-#     def get_success_url(self):
-#         return reverse('poll_view', kwargs={'pk': self.object.poll.pk})
 
 class ChoiceDeleteView(DeleteView):
     template_name = 'choice/choice_delete.html'

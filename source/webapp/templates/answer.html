@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{#    {{ poll.choice.all }}#}
+    <h1>Выберите ответ:</h1>
+    <form {% url "answer" poll.pk %}" method="POST">
+    {% csrf_token %}
+        {% for choice in poll.choice.all %}
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="answer" value="{{ choice.pk }}" id="{{ choice.pk }}>
+              <label class="form-check-label">
+                {{ choice.text }}
+              </label>
+            </div>
+        {% endfor %}
+        <p><input type="submit" value="Выбрать" class="btn btn-dark"></p>
+    </form>
+{% endblock %}
