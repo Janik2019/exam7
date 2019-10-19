@@ -16,7 +16,7 @@
         <div class="card mb-5">
             <div class="card-body">
                 <h2 class="card-title">{{ poll.question }}</h2>
-{#                <p class="card-text">{{ task.text }}</p>#}
+                <p class="card-text">{{ poll.created_at }}</p>
                 <a href="{% url 'poll_view' poll.pk %}" class="btn btn-dark">ПРОСМОТР</a>
                 <a href="{% url 'poll_update' poll.pk %}" class="btn btn-dark">РЕДАКТИРОВАТЬ</a>
                 <a href="{% url "poll_delete" poll.pk %}" class="btn btn-dark">УДАЛИТЬ</a>
